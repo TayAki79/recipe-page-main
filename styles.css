@@ -1,0 +1,241 @@
+/* Font Families */
+/* young-serif-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Young Serif";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/fonts/young-serif-v2-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* outfit-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/fonts/outfit-v14-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* outfit-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 600;
+  src: url("/assets/fonts/outfit-v14-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* outfit-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/assets/fonts/outfit-v14-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* Colors */
+:root {
+  --color--white: hsl(0, 0%, 100%);
+  --color--stone-100: hsl(30, 54%, 90%);
+  --color--stone-150: hsl(30, 18%, 87%);
+  --color--stone-600: hsla(30, 10%, 34%, 90%);
+  --color--stone-900: rgb(48, 45, 44);
+  --color--brown-800: hsl(14, 45%, 36%);
+  --color--rose-800: rgb(123, 40, 79);
+  --color--rose-50: hsl(330, 100%, 98%);
+  --color--body-bg: var(--color--rose-50);
+  --color--wrapper-bg: var(--color--white);
+  --color--h1: var(--color--stone-900);
+  --color--h2: var(--color--brown-800);
+  --color--h3: var(--color--rose-800);
+  --color--p: var(--color--stone-600);
+  --color--divider: var(--color--stone-600);
+  --color--list-digits: var(--color--rose-800);
+}
+
+/* Fonts Sizes */
+:root {
+  --fs--16: calc(16 / 16 * 1rem);
+  --fs--24: calc(24 / 16 * 1rem);
+  --fs--36: calc(36 / 16 * 1rem);
+  --fs--48: calc(48 / 16 * 1rem);
+  --fs--h1: var(--fs--36);
+}
+
+/* Globals */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Outfit", Arial, Helvetica, sans-serif;
+  background: var(--color--body-bg);
+}
+
+.wrapper {
+  background-color: var(--color--wrapper-bg);
+  margin-inline: auto;
+}
+
+@media (min-width: 376px) {
+  .wrapper {
+    max-width: 900px;
+    margin: 150px auto;
+    padding: 40px;
+    border: none;
+    border-radius: 40px;
+  }
+}
+
+.content {
+  max-width: 375px;
+  padding-inline: 32px;
+}
+
+/* headings and paragraphs */
+h1 {
+  color: var(--color--h1);
+  font-size: var(--fs--h1);
+  line-height: 2.5rem;
+  font-family: "Young Serif", "Times New Roman", Times, serif;
+}
+
+h2 {
+  font-family: "Young Serif", "Times New Roman", Times, serif;
+  color: var(--color--brown-800);
+  letter-spacing: 0.1rem;
+}
+
+h3 {
+  color: var(--color--h3);
+  margin: 0;
+}
+
+p, li, td {
+  color: var(--color--p);
+}
+
+/* Image */
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Title Section */
+
+.wrapper__card {
+  background-color: var(--color--rose-50);
+  border: none;
+  border-radius: 15px;
+  padding: 20px 30px 10px 20px;
+  margin-block: 30px;
+}
+
+.wrapper__card ul {
+  padding-left: 24px;
+  list-style: none;
+}
+
+.wrapper__card li {
+  position: relative;
+  padding-left: 15px;
+  margin-bottom: 10px;
+}
+
+.wrapper__card li::before {
+  content: "•";
+  position: absolute;
+  top: 50%;
+  left: -15px;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+}
+
+/* Ingredients Section */
+.ingredients {
+  border-bottom: 1px solid var(--color--divider);
+  padding-block-end: 30px;
+}
+
+.ingredients ul {
+  padding-left: 24px;
+  list-style: none;
+  margin: 0;
+}
+
+.ingredients li {
+  position: relative;
+  padding-left: 15px;
+  margin-bottom: 10px;
+}
+
+.ingredients li::before {
+  content: "•";
+  position: absolute;
+  top: 50%;
+  left: -15px;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+}
+
+
+/* Instructions Section */
+.instructions {
+  margin-block: 40px;
+  border-bottom: 1px solid var(--color--divider);
+  padding-block-end: 24px;
+}
+
+.instructions ol {
+padding-left: 24px;
+}
+
+.instructions li {
+padding-left: 16px;
+margin-bottom: 10px;
+}
+
+.instructions li::marker {
+color: var(--color--list-digits);
+font-weight: bold;
+}
+
+/* Nutrition Section */
+.nutrition {
+padding-block-end: 30px;
+}
+
+table {
+  width: 309px;
+  border-collapse: collapse;
+}
+
+tr:not(:last-child) td {
+  border-bottom: 1px solid var(--color--divider);
+}
+
+tr td:nth-child(1) {
+  width: 50%;
+  padding-inline-start: 30px;
+  padding-block: 15px;
+}
+
+td:nth-child(2) {
+  width: 50%;
+  padding-inline-start: 10px;
+  color: var(--color--rose-800);
+}
+
+
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
